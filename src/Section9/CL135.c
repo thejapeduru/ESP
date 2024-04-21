@@ -18,18 +18,6 @@ int main ()
     int i2digit100 = input2/100;
     int i2digit10 = input2%10;
 
-    MaxSum = i1digit100+i1digit10 > i2digit100+i2digit10 ? sum(input1) : sum(input2) ;
+    MaxSum = i1digit100+i1digit10 > i2digit100+i2digit10 ? (input1%10 + (input1/10)%10 + (input1/100)%10) : input2%10 + (input2/10)%10 + (input2/100)%10 ;
     printf ("Result = %d",MaxSum);
-}
-int sum(int number)
-{
-    int sum = 0;
-    
-    while(number != 0)
-    {
-        int temp = number % 10;  
-        sum += temp;
-        number = number / 10; 
-    }
-    return sum;
 }
